@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Humans of Align</title>
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/unicons.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class='uil uil-user'></i> Humans of Align</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto order-0">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/stories" class="nav-link"><span data-hover="Stories">Stories</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#align-masters" class="nav-link"><span data-hover="Align Masters">Align Masters</span></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <div class="ml-lg-4">
+                        <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                            <i class="color-mode-icon"></i>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                    <div class="about-text">
+                        <small class="small-text">Welcome to <span class="mobile-block">Humans of Align!</span></small>
+                        <h1 class="animated animated-text">
+                            <!-- <span class="mr-2">Hey folks, I'm</span> -->
+                            <div class="animated-info">
+                                <span class="animated-item">Learn</span>
+                                <span class="animated-item">Succeed</span>
+                                <span class="animated-item">Inspire</span>
+                            </div>
+                        </h1>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+                        <div class="custom-btn-group mt-4">
+                            <a href="https://pages.northeastern.edu/EMOPPEVGDOMGRADNETSTEMMSCSAPSCH2021-03-05PSCHCOMBOMSCSALIGN_LP.html" class="btn mr-lg-2 custom-btn">Learn More About Our Align Program!</a>
+                            <!-- <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Contact</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="about-image svg">
+                        <img src="../static/images/cover.jpg" class="img-fluid" alt="jpg image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project py-5" id="project">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-11 text-center mx-auto col-12">
+
+                    <div class="col-lg-8 mx-auto">
+                        <h5 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Humans of Align</h5>
+                        <br/>
+                        <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Latest Stories</h2>
+                    </div>
+
+                    <div class="owl-carousel owl-theme">
+
+                        {% for i in range(recent_five['First Name'] | length)%}
+
+                        <div class="item">
+                            <div class="project-info">
+                                <a href="/stories/{{recent_five['First Name'][i] + '-' + recent_five['Last Name'][i]}}">
+                                    <!-- <img src="../static/images/faces/1.jpg" class="img-fluid"> -->
+                                    <img src="{{recent_five['Photo'][i]}}" class="img-fluid">
+                                </a>
+                                </a>
+                                <a href="/stories/{{recent_five['First Name'][i] + '-' + recent_five['Last Name'][i]}}">
+                                    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{recent_five['First Name'][i] + ' ' + recent_five['Last Name'][i]}}</h1>
+                                </a>
+                                <h5 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{recent_five['Course'][i]}}</h5>
+                                <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{recent_five['Current Position'][i]}}</p>
+                                <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{recent_five['Current Company'][i]}}</h6>
+                                <br>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                        <!-- <div class="item">
+                            <div class="project-info">
+                                <a href="individual_story.html">
+                                    <img src="../static/images/faces/1.jpg" class="img-fluid">
+                                </a>
+                                <a href="individual_story.html">
+                                    <h1>Name</h1>
+                                </a>
+                                <h5>MSCS-Align/MSDS-Align</h5>
+                                <p>Year</p>
+                                <h6>Current Position</h6>
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-info">
+                                <a href="individual_story.html">
+                                    <img src="../static/images/faces/1.jpg" class="img-fluid">
+                                </a>
+                                <a href="individual_story.html">
+                                    <h1>Name</h1>
+                                </a>
+                                <h5>MSCS-Align/MSDS-Align</h5>
+                                <p>Year</p>
+                                <h6>Current Position</h6>
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-info">
+                                <a href="individual_story.html">
+                                    <img src="../static/images/faces/1.jpg" class="img-fluid">
+                                </a>
+                                <a href="individual_story.html">
+                                    <h1>Name</h1>
+                                </a>
+                                <h5>MSCS-Align/MSDS-Align</h5>
+                                <p>Year</p>
+                                <h6>Current Position</h6>
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-info">
+                                <a href="individual_story.html">
+                                    <img src="../static/images/faces/1.jpg" class="img-fluid">
+                                </a>
+                                <a href="individual_story.html">
+                                    <h1>Name</h1>
+                                </a>
+                                <h5>MSCS-Align/MSDS-Align</h5>
+                                <p>Year</p>
+                                <h6>Current Position</h6>
+                                <br>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="custom-btn-group mt-4">
+                        <a href="/stories" class="btn custom-btn custom-btn-bg custom-btn-link">Show More Stories</a>
+                        <!-- <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Contact</a> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="align-masters">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4">MSCS Align Program</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 1</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Proin ornare non purus ut rutrum. Nulla facilisi. Aliquam laoreet libero ac pharetra feugiat. Cras ac fermentum nunc, a faucibus nunc.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 2</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Fusce rutrum augue id orci rhoncus molestie. Nunc auctor dignissim lacus vel iaculis.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 3</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Sed fringilla vitae enim sit amet cursus. Sed cursus dictum tortor quis pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 4</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 5</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 6</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4 mobile-mt-2">MSDS Align Program</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 1</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 2</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 3</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 4</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 5</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>Sem 6</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Courses</span><small>Courses</small></h3>
+                                <p>Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact py-5" id="contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-5 mr-lg-5 col-12">
+                    <!-- <div class="google-map w-100">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12088.558402180099!2d-73.99373482142036!3d40.75895421922642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855b8fb3083%3A0xa0f9aef176042a5c!2sTheater+District%2C+New+York%2C+NY%2C+USA!5e0!3m2!1sen!2smm!4v1549875377188"
+                            width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div> -->
+
+                    <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+                        <div class="contact-info-item">
+                            <h3 class="mb-3 text-white">Khoury College of Computer Sciences</h3>
+                            <h6 class="mb-3 text-white">Northeastern University</h6>
+                            <p class="footer-text mb-0">Contact Number</p>
+                            <p><a href="mailto:hello@company.co">Contact email ID</a></p>
+                            <h6 class="mb-3 text-white">Align Programs offered in:</h6>
+                            <p class="footer-text mb-0"><a href="https://admissions.northeastern.edu/student-life/#_ga=2.23742521.244785503.1671308270-1215939213.1662555681">Boston</a></p>
+                            <p class="footer-text mb-0"><a href="https://roux.northeastern.edu/#_ga=2.104547075.244785503.1671308270-1215939213.1662555681">Portland</a></p>
+                            <p class="footer-text mb-0"><a href="https://bayarea.northeastern.edu/#_ga=2.104547075.244785503.1671308270-1215939213.1662555681">Silicon Valley</a></p>
+                            <p class="footer-text mb-0"><a href="https://vancouver.northeastern.edu/#_ga=2.104547075.244785503.1671308270-1215939213.1662555681">Vancouver</a></p>
+                        </div>
+
+                        <ul class="social-links">
+                            <li>
+                                <a href="#" class="uil uil-facebook" data-toggle="tooltip" data-placement="left" title="LinkedIn"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="about-image svg">
+                        <img src="../static/images/cover-2.jpg" class="img-fluid" alt="jpg image">
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-6 col-12">
+                    <div class="contact-form">
+                        <h2 class="mb-4">Contact Us</h2>
+
+                        <form action="" method="get">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                                </div>
+
+                                <div class="ml-lg-auto col-lg-5 col-12">
+                                    <input type="submit" class="form-control submit-btn" value="Send">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <p class="copyright-text text-center">Copyright &copy; 2022 Khoury College of Computer Sciences. All rights reserved</p>
+                    <!-- <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p> -->
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/Headroom.js"></script>
+    <script src="../static/js/jQuery.headroom.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/smoothscroll.js"></script>
+    <script src="../static/js/custom.js"></script>
+
+</body>
+
+</html>
