@@ -137,28 +137,28 @@
                     </div>
                 </li>
 
-                <li class="day">
+                <li class="day" id="sem5Li">
                     <div class="events">
                         <p>{{student_details['Sem 5'][0]}}</p>
                         <div class="date">Semester 5</div>
                     </div>
                 </li>
 
-                <li class="day">
+                <li class="day" id="sem6Li">
                     <div class="events">
                         <p>{{student_details['Sem 6'][0]}}</p>
                         <div class="date">Semester 6</div>
                     </div>
                 </li>
 
-                <li class="day">
+                <li class="day" id="sem7Li">
                     <div class="events">
                         <p>{{student_details['Sem 7'][0]}}</p>
                         <div class="date">Semester 7</div>
                     </div>
                 </li>
 
-                <li class="day">
+                <li class="day" id="sem8Li">
                     <div class="events">
                         <p>{{student_details['Sem 8'][0]}}</p>
                         <div class="date">Semester 8</div>
@@ -198,6 +198,56 @@
     <script src="../static/js/smoothscroll.js"></script>
     <script src="../static/js/custom.js"></script>
     <script src="../static/js/timeline.js"></script>
+    <script>
+        // Get the content of the certain semester
+        var sem5Content = "{{student_details['Sem 5'][0]}}";
+    
+        // Get the corresponding <li> element
+        var sem5Li = document.getElementById("sem5Li");
+    
+        // If Sem 5 has content, show the <li>, otherwise hide it
+        if (sem5Content.trim().length > 0) {
+            sem5Li.style.display = "block"; // Show the <li>
+        } else {
+            sem5Li.style.display = "none";  // Hide the <li>
+        }
+    </script>
+    <script>
+        // Same logic with Sem 5
+        var sem6Content = "{{student_details['Sem 6'][0]}}";
+    
+        var sem6Li = document.getElementById("sem6Li");
+    
+        if (sem6Content.trim().length > 0) {
+            sem6Li.style.display = "block"; 
+        } else {
+            sem6Li.style.display = "none";
+        }
+    </script>
+    <script>
+        // Same logic with Sem 5
+        var sem7Content = "{{student_details['Sem 7'][0]}}";
+    
+        var sem7Li = document.getElementById("sem7Li");
+    
+        if (sem7Content.trim().length > 0) {
+            sem7Li.style.display = "block"; 
+        } else {
+            sem7Li.style.display = "none";
+        }
+    </script>
+    <script>
+        // Same logic with Sem 5
+        var sem8Content = "{{student_details['Sem 8'][0]}}";
+    
+        var sem8Li = document.getElementById("sem8Li");
+    
+        if (sem8Content.trim().length > 0) {
+            sem8Li.style.display = "block"; 
+        } else {
+            sem8Li.style.display = "none";
+        }
+    </script>
 
 </body>
 
