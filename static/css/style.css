@@ -158,6 +158,15 @@ strong {
     animation-delay: 4s;
 }
 
+.keyword-color-red {
+    color: #d41b2c;
+    font-weight: bold;
+}
+
+.img-center {
+    padding-top: 30%;
+}
+
 @keyframes BottomTotop {
     0% {
         opacity: 0;
