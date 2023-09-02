@@ -11,6 +11,8 @@ import gspread
 '''
 Get photo links for drive
 '''
+
+
 def edit_photo_links(df):
     links = df['Photo']
     for i in range(len(links)):
@@ -20,13 +22,14 @@ def edit_photo_links(df):
     df['Photo'] = links
     return df
 
+
 '''
 Init flask app
 '''
 app = Flask(__name__)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-sa = gspread.service_account(filename = "humans-of-align.json")
+sa = gspread.service_account(filename="humans-of-align.json")
 sheet = sa.open("Render")
 
 '''
@@ -38,7 +41,9 @@ records = worksheet.get_all_records()
 '''
 Landing page
 '''
-@app.route('/', methods=['GET','POST'])
+
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
 
     # Read google sheet
@@ -49,7 +54,7 @@ def index():
     # Read dataframe
     df = pd.DataFrame.from_records(records)
     df['Timestamp'] = pd.to_datetime(df['Timestamp'])
-    df = df.sort_values(by='Timestamp', ascending = False)
+    df = df.sort_values(by='Timestamp', ascending=False)
     # print(df)
 
     # Get links to photos
@@ -60,12 +65,15 @@ def index():
     recent_five_dict = recent_five.to_dict('list')
     # print(recent_five_dict)
 
-    return render_template("index.html", recent_five = recent_five_dict)
+    return render_template("index.html", recent_five=recent_five_dict)
+
 
 '''
 List of students page
 '''
-@app.route('/stories', methods=['GET','POST'])
+
+
+@app.route('/stories', methods=['GET', 'POST'])
 def stories():
 
     # Read form responses
@@ -76,7 +84,7 @@ def stories():
     # Read dataframe
     df = pd.DataFrame.from_records(records)
     df['Timestamp'] = pd.to_datetime(df['Timestamp'])
-    df = df.sort_values(by='Timestamp', ascending = False)
+    df = df.sort_values(by='Timestamp', ascending=False)
     # print(df)
 
     # Get links to photos
@@ -91,7 +99,7 @@ def stories():
     for i in range(rows):
         temp_list = []
         for j in range(3):
-            if(start<total):
+            if (start < total):
                 temp_list.append(start)
                 start += 1
         index_list.append(temp_list)
@@ -100,12 +108,15 @@ def stories():
     for i in range(total):
         index_list_normal.append(i)
 
-    return render_template("students.html", students_details = students_details_dict, index_list = index_list, index_list_normal = index_list_normal)
+    return render_template("students.html", students_details=students_details_dict, index_list=index_list, index_list_normal=index_list_normal)
+
 
 '''
 Individual stories page
 '''
-@app.route('/stories/<name>', methods=['GET','POST'])
+
+
+@app.route('/stories/<name>', methods=['GET', 'POST'])
 def students_name(name):
 
     # Read form responses
@@ -116,7 +127,7 @@ def students_name(name):
     # Read dataframe
     df = pd.DataFrame.from_records(records)
     df['Timestamp'] = pd.to_datetime(df['Timestamp'])
-    df = df.sort_values(by='Timestamp', ascending = False)
+    df = df.sort_values(by='Timestamp', ascending=False)
     # print(df)
 
     # Get links to photos
@@ -124,11 +135,13 @@ def students_name(name):
 
     # Get student details
     first_name, last_name = name.split('-')
-    student_details = df.loc[(df['First Name'] == first_name) & (df['Last Name'] == last_name)]
+    student_details = df.loc[(df['First Name'] == first_name) & (
+        df['Last Name'] == last_name)]
     student_details_dict = student_details.to_dict('list')
 
-    return render_template("individual_story.html", student_details = student_details_dict)
+    return render_template("individual_story.html", student_details=student_details_dict)
+
 
 if __name__ == "__main__":
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(debug = True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
