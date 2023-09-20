@@ -407,6 +407,19 @@ td img {
     color: #ffffff;
 }
 
+.center-item-outer-container {
+    text-align: center;
+    display: flex;
+}
+
+.learn-more-button {
+    margin: 40px auto;
+}
+
+.timeline-title {
+    margin: 50px auto;
+}
+
 .timeline-wrapper {
     position: relative;
     padding: 22px 0;

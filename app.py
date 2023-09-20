@@ -142,6 +142,13 @@ def students_name(name):
     return render_template("individual_story.html", student_details=student_details_dict)
 
 
+'''
+Align Master's Program Page
+'''
+@app.route('/alignmastersprogram', methods=['GET'])
+def align_masters():
+    return render_template("align_masters.html")
+
 if __name__ == "__main__":
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(host='0.0.0.0', port=5000, debug=True)
