@@ -151,4 +151,9 @@ def align_masters():
 
 if __name__ == "__main__":
     app.config['TEMPLATES_AUTO_RELOAD'] = True
+    
+    # Uncomment for local development
+    # app.run(debug = True)
+
+    # Comment this out for local development
     app.run(host='0.0.0.0', port=5000, debug=True)
