@@ -40,13 +40,13 @@
                         <a href="/" class="nav-link"><span data-hover="About">About</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="/stories" class="nav-link"><span data-hover="Stories">Stories</span></a>
+                        <a href="/stories" class="nav-link"><span data-hover="Student Stories">Student Stories</span></a>
                     </li>
                     <!-- <li class="nav-item">
                         <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
                     </li> -->
                     <li class="nav-item">
-                        <a href="https://pages.northeastern.edu/EMOPPEVGDOMGRADNETSTEMMSCSAPSCH2021-03-05PSCHCOMBOMSCSALIGN_LP.html" class="nav-link"><span data-hover="Align Masters">Align Masters</span></a>
+                        <a href="/alignmastersprogram" class="nav-link"><span data-hover="Align Master's Program">Align Master's Program</span></a>
                     </li>
                 </ul>
 
@@ -70,16 +70,25 @@
 
                 <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
                     <div class="about-text">
-                        <small class="small-text">Welcome to <span class="mobile-block">{{student_details['First Name'][0]}}'s grad study journey!</span></small>
+                        <small class="small-text">Welcome to <span class="mobile-block">{{student_details['First Name'][0]}}'s grad student journey!</span></small>
                         <h1 class="animated animated-text">
-                            <span class="mr-2">Hey folks, I'm {{student_details['First Name'][0] + ' ' + student_details['Last Name'][0]}}</span>
+                            <span class="mr-2">Hi, I'm {{student_details['First Name'][0] + ' ' + student_details['Last Name'][0]}}</span>
                         </h1>
-
-                        <p>I'm currently working as a {{student_details['Current Position'][0]}} at {{student_details['Current Company'][0]}}.</p>
-
+                        <!-- <p>I am a {{student_details['Program'][0]}} student at Northeastern University Khoury College.</p> -->
+                        <!-- <p>I'm currently working as a {{student_details['Current Position'][0]}} at {{student_details['Current Company'][0]}}.</p> -->
+                        <h3 style="font-weight: normal;">About Me</h3>
                         <br/>
-
-                        <p>During my time at Northeastern University Khoury College, I am a {{student_details['Course'][0]}} student.</p>
+                        <h6>Program</h6>
+                        <p>{{student_details['Program'][0]}}</p>
+                        <h6>Status</h6>
+                        <p>{{student_details['Status'][0]}}</p>
+                        <h6 id="curr_position_title">Current Position</h6>
+                        <p id="curr_position">{{student_details['Current Company'][0]}} - {{student_details['Current Position'][0]}}</p>
+                        <h6 id="prev_internships_title">Previous Internship(s)</h6>
+                        <p id="prev_internship_1" style="margin-top: 0; padding-top: 0;">{{student_details['Previous Internship #1 Company'][0]}} - {{student_details['Previous Internship #1 Position'][0]}}</p>
+                        <p id="prev_internship_2" style="margin-bottom: 0; padding-bottom: 0;">{{student_details['Previous Internship #2 Company'][0]}} - {{student_details['Previous Internship #2 Position'][0]}}</p>
+                        <h6>Previous Education</h6>
+                        <p>{{student_details['Previous Degree'][0]}} - {{student_details['Previous School'][0]}}</p>
 
                         <div class="custom-btn-group mt-4">
                             <a href="{{student_details['LinkedIn URL'][0]}}" class="btn mr-lg-2 custom-btn" target="_blank">Connect with me on LinkedIn!</a>
@@ -111,57 +120,91 @@
             <ul class="days">
                 <li class="day">
                     <div class="events">
-                        <p>{{student_details['Sem 1'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 1 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 1 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 1</div>
                     </div>
                 </li>
 
                 <li class="day">
                     <div class="events">
-                        <p>{{student_details['Sem 2'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 2 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 2 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 2</div>
                     </div>
                 </li>
 
                 <li class="day">
                     <div class="events">
-                        <p>{{student_details['Sem 3'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 3 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 3 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 3</div>
                     </div>
                 </li>
 
                 <li class="day">
                     <div class="events">
-                        <p>{{student_details['Sem 4'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 4 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 4 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 4</div>
                     </div>
                 </li>
 
                 <li class="day" id="sem5Li">
                     <div class="events">
-                        <p>{{student_details['Sem 5'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 5 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 5 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 5</div>
                     </div>
                 </li>
 
                 <li class="day" id="sem6Li">
                     <div class="events">
-                        <p>{{student_details['Sem 6'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 6 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 6 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 6</div>
                     </div>
                 </li>
 
                 <li class="day" id="sem7Li">
                     <div class="events">
-                        <p>{{student_details['Sem 7'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 7 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 7 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 7</div>
                     </div>
                 </li>
 
                 <li class="day" id="sem8Li">
                     <div class="events">
-                        <p>{{student_details['Sem 8'][0]}}</p>
+                        <div>
+                            <h6 class="term">{{student_details['Semester 8 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 8 Description'][0]}}</p>
+                        </div>
                         <div class="date">Semester 8</div>
+                    </div>
+                </li>
+
+                <li class="day" id="sem9Li">
+                    <div class="events">
+                        <div>
+                            <h6 class="term">{{student_details['Semester 9 Term (example: Spring 2022)'][0]}}</h6>
+                            <p>{{student_details['Semester 9 Description'][0]}}</p>
+                        </div>
+                        <div class="date">Semester 9</div>
                     </div>
                 </li>
 
@@ -200,8 +243,7 @@
     <script src="../static/js/timeline.js"></script>
     <script>
         // Get the content of the certain semester
-        var sem5Content = "{{student_details['Sem 5'][0]}}";
-    
+        var sem5Content = "{{student_details['Semester 5 Description'][0]}}";
         // Get the corresponding <li> element
         var sem5Li = document.getElementById("sem5Li");
     
@@ -214,20 +256,18 @@
     </script>
     <script>
         // Same logic with Sem 5
-        var sem6Content = "{{student_details['Sem 6'][0]}}";
-    
+        var sem6Content = "{{student_details['Semester 6 Description'][0]}}";
         var sem6Li = document.getElementById("sem6Li");
     
         if (sem6Content.trim().length > 0) {
-            sem6Li.style.display = "block"; 
+            sem6Li.style.display = "block";
         } else {
             sem6Li.style.display = "none";
         }
     </script>
     <script>
         // Same logic with Sem 5
-        var sem7Content = "{{student_details['Sem 7'][0]}}";
-    
+        var sem7Content = "{{student_details['Semester 7 Description'][0]}}";
         var sem7Li = document.getElementById("sem7Li");
     
         if (sem7Content.trim().length > 0) {
@@ -238,14 +278,59 @@
     </script>
     <script>
         // Same logic with Sem 5
-        var sem8Content = "{{student_details['Sem 8'][0]}}";
-    
+        var sem8Content = "{{student_details['Semester 8 Description'][0]}}";
         var sem8Li = document.getElementById("sem8Li");
     
         if (sem8Content.trim().length > 0) {
             sem8Li.style.display = "block"; 
         } else {
             sem8Li.style.display = "none";
+        }
+    </script>
+    <script>
+        // Same logic with Sem 5
+        var sem9Content = "{{student_details['Semester 9 Description'][0]}}";
+        var sem9Li = document.getElementById("sem9Li");
+
+        if (sem9Content.trim().length > 0) {
+            sem9Li.style.display = "block";
+        } else {
+            sem9Li.style.display = "none";
+        }
+    </script>
+    <script>
+        // Display current position if one exists
+        var current_position_data = "{{student_details['Current Position'][0]}}";
+        var curr_position_title = document.getElementById("curr_position_title");
+        var curr_position = document.getElementById("curr_position");
+
+        if (current_position_data.trim().length > 0) {
+            curr_position_title.style.display = "block";
+            curr_position.style.display = "block";
+        } else {
+            curr_position_title.style.display = "none";
+            curr_position.style.display = "none";
+        }
+    </script>
+    <script>
+        // Display prev internships only if one exists
+        var prev_internship_1_position_data = "{{student_details['Previous Internship #1 Position'][0]}}";
+        var prev_internship_2_position_data = "{{student_details['Previous Internship #2 Position'][0]}}";
+
+        var prev_internships_title = document.getElementById("prev_internships_title");
+        var prev_internship_1 = document.getElementById("prev_internship_1");
+        var prev_internship_2 = document.getElementById("prev_internship_2");
+
+        // If at least one position, display title
+        if (prev_internship_1_position_data.trim().length > 0 || prev_internship_2_position_data.trim().length > 0) {
+            // Display title and any existing positions
+            prev_internships_title.style.display = "block";
+            prev_internship_1.style.display = prev_internship_1_position_data.trim().length > 0 ? "block" : "none";
+            prev_internship_2.style.display = prev_internship_2_position_data.trim().length > 0 ? "block" : "none";
+        } else {
+            prev_internships_title.style.display = "none";
+            prev_internship_1.style.display = "none";
+            prev_internship_2.style.display = "none";
         }
     </script>
 
